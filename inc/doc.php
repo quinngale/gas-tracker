@@ -41,22 +41,42 @@ function site_nav()
                         Documentation
                     </a> --->
                 </div>
-
                 <div class="navbar-end">
                     <div class="navbar-item">
+    EOT;
+
+    if (isset($_SESSION["id"])) {
+        $username = $_SESSION['username'];
+
+        echo <<<EOT
                         <div class="buttons">
-                        <a href="/account/sign-up" class="button is-light">
-                            Sign up
-                        </a>
-                        <a class="button is-primary">
-                            Log in
-                        </a>
+                            <a href="/account/" class="button is-ghost">
+                                Hello $username
+                            </a>
+                            <a href="/account/logout" class="button is-light">
+                                Log out
+                            </a>
                         </div>
+        EOT;
+    } else {
+        echo <<<EOT
+                        <div class="buttons">
+                            <a href="/account/sign-up" class="button is-light">
+                                Sign up
+                            </a>
+                            <a href="/account/login" class="button is-primary">
+                                Log in
+                            </a>
+                        </div>
+        EOT;
+    }
+
+    echo
+    <<<EOT
                     </div>
                 </div>
             </div>
         </nav>
-
     EOT;
 }
 
