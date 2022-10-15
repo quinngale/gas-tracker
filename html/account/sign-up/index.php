@@ -1,6 +1,11 @@
 <?php
 require '../../../config.php';
 
+if (isset($_SESSION["id"])) {
+    header("Location: /dashboard");
+    die();
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username =  $_POST['username'];
     $email = $_POST['email'];
