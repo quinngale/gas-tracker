@@ -15,6 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if (!empty($username) && !empty($email) && !empty($password) && !empty($password_confirm)) {
         if ($password != $password_confirm || strlen($password) < 12) $flash[] = "Passwords don't match or password is too short";
         elseif (strlen($username) > 64) $flash[] = "Username is too long. The maximum length is 64 characters.";
+        elseif (preg_match('/[^a-z_\-0-9]/i', $username)) $flash[] = "The username is invalid. Please only use a-z, A-Z, 0-9, -, and _";
         elseif (strlen($email) > 254) $flash[] = "Email is invalid. Please try again.";
 
         $password = password_hash($password, PASSWORD_DEFAULT);
