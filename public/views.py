@@ -4,4 +4,4 @@ from django.shortcuts import render
 
 
 def index(request):
-    render(request, 'public/index.html')
+    return render(request, 'public/index.html')
