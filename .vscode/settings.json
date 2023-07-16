@@ -9,4 +9,19 @@
         }
     },
     "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+    "python.formatting.provider": "none",
+    "editor.formatOnSave": true,
+    "editor.detectIndentation": false,
+    "files.eol": "\n",
+    "files.insertFinalNewline": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "workbench.list.openMode": "doubleClick",
+    "workbench.list.smoothScrolling": true,
+    "workbench.startupEditor": "none",
+    "window.autoDetectColorScheme": true,
+    "editor.insertSpaces": false
 }
