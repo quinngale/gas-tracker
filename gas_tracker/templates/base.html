@@ -43,19 +43,19 @@
                 <div class="navbar-item">
                     <p>Hello {{request.user}}</p>
                 </div>
-                <a href="" class="navbar-item">My account</a>
+                <a href="{% url 'account:profile' request.user.pk %}" class="navbar-item">My account</a>
                 {% endif %}
                 <div class="navbar-item">
                     <div class="buttons is-flex is-align-items-center is-justify-items-center">
                         {% if request.user.is_authenticated %}
-                        <a class=" button is-light" href="{% url 'accounts:signout' %}">
+                        <a class=" button is-light" href="{% url 'account:signout' %}">
                             Sign out
                         </a>
                         {% else %}
-                        <a class="button is-primary" href="{% url 'accounts:signup' %}">
+                        <a class="button is-primary" href="{% url 'account:signup' %}">
                             Sign up
                         </a>
-                        <a class=" button is-light" href="{% url 'accounts:signin' %}">
+                        <a class=" button is-light" href="{% url 'account:signin' %}">
                             Sign in
                         </a>
                         {% endif %}

@@ -39,7 +39,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "gas_tracker",
     "public",
-    "accounts",
+    "account",
     "crispy_forms",
     "crispy_bulma",
 ]

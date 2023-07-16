@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+<section class="section">
+    <h1 class="title">My Account</h1>
+
+    <form action="" method="post">
+        {% csrf_token %}
+
+        {{form|crispy}}
+
+        <div class="buttons">
+            <button type="submit" class="button is-primary">Update</button>
+            <a class="button is-ghost" href="{% url 'account:update-password' request.user.pk %}">Change password...</a>
+        </div>
+    </form>
+</section>
+{% endblock %}
