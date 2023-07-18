@@ -12,7 +12,7 @@ from . import forms
 
 class SignUp(CreateView):
     form_class = forms.RegistrationForm
-    success_url = urls.reverse_lazy("accounts:signin")
+    success_url = urls.reverse_lazy("account:signin")
 
     template_name = "account/signup.html"
 
